@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Switch } from "react-router-dom";
+import { AuthContextProvider } from "./contexts/auth.context";
+import { GlobalStyles } from "./global/styles";
+import { Routes } from "./routes";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <AuthContextProvider>
+          <GlobalStyles />
+          <ToastContainer
+            position="bottom-right"
+            theme="colored"
+            autoClose={5000}
+            draggable
+            closeOnClick
+            pauseOnHover
+            pauseOnFocusLoss
+          />
+          <Routes />
+        </AuthContextProvider>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
