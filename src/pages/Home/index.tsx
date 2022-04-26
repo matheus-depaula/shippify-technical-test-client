@@ -33,7 +33,7 @@ export function Home() {
             <input type="email" placeholder="Email" required value={email} onChange={e => setEmail(e.target.value)} />
 
             <input type="password" placeholder="Password" required value={password} onChange={e => setPassword(e.target.value)} />
-            <Button text="Send" />
+            <Button isSubmit text="Send" />
           </Form>
         </main>
       </div>
