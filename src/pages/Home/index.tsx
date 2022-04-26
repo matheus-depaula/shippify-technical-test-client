@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useAuth } from '../../hooks/use-auth';
 import { useToastify } from '../../hooks/use-toastify';
 
-import { Button } from '../../components/button';
+import { Button } from '../../components/common/button';
 
 import { Container, Form } from './styles';
 
@@ -30,22 +30,10 @@ export function Home() {
           <h1>Login</h1>
 
           <Form onSubmit={handleSubmit}>
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
+            <input type="email" placeholder="Email" required value={email} onChange={e => setEmail(e.target.value)} />
 
-            <input
-              type="password"
-              placeholder="Password"
-              required
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-            <Button type="submit" text="Send" />
+            <input type="password" placeholder="Password" required value={password} onChange={e => setPassword(e.target.value)} />
+            <Button text="Send" />
           </Form>
         </main>
       </div>
